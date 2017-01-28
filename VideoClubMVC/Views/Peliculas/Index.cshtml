@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VideoClubMVC.Models.PeliculasModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Peliculas")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPelicula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Año)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idCliente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPelicula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Año)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCliente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Peliculas", new { id=item.idPelicula }, null) |
+            @Html.ActionLink("Details", "Details", "Peliculas", new { id = item.idPelicula }, null) |
+            @Html.ActionLink("Delete", "Delete", "Peliculas", new { id = item.idPelicula }, null)
+        </td>
+    </tr>
+}
+
+</table>

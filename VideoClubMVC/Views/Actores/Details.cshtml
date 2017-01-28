@@ -1,0 +1,36 @@
+﻿@model VideoClubMVC.Models.ActoresModel
+
+<div>
+    <h4>Actores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idActor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idActor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idActor}) |
+    @Html.ActionLink("Back to List", "Index", "Actores")
+</p>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<VideoClubMVC.Models.ActoresModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Actores")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idActor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idActor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Actores", new { id=item.idActor }, null) |
+            @Html.ActionLink("Details", "Details", "Actores", new { id = item.idActor }, null) |
+            @Html.ActionLink("Delete", "Delete", "Actores", new { id = item.idActor }, null)
+        </td>
+    </tr>
+}
+
+</table>
